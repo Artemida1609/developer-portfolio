@@ -1,4 +1,5 @@
 import Header from './components/Header'
+import AboutMe from './components/AboutMe'
 
 function App() {
 	return (
@@ -13,10 +14,7 @@ function App() {
 					<p>Artem Skichko</p>
 				</div>
 
-				<section id="about" className="mt-16">
-					<h3 className="mb-3 text-xl font-semibold">About</h3>
-					<p className="text-slate-600">Short bio goes here.</p>
-				</section>
+				<AboutMe />
 
 				<section id="skills" className="mt-16">
 					<h3 className="mb-3 text-xl font-semibold">Skills</h3>
