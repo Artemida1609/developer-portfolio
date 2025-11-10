@@ -1,6 +1,7 @@
 import Header from './components/Header'
 import AboutMe from './components/AboutMe'
 import Skills from './components/Skills'
+import Projects from './components/Projects'
 
 function App() {
 	return (
@@ -19,10 +20,7 @@ function App() {
 
 				<Skills />
 
-				<section id="projects" className="mt-16">
-					<h3 className="mb-3 text-xl font-semibold">Projects</h3>
-					<p className="text-slate-600">Highlight selected projects.</p>
-				</section>
+				<Projects />
 
 				<section id="contact" className="mt-16">
 					<h3 className="mb-3 text-xl font-semibold">Contact</h3>
