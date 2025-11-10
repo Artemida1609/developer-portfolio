@@ -1,5 +1,6 @@
 import Header from './components/Header'
 import AboutMe from './components/AboutMe'
+import Skills from './components/Skills'
 
 function App() {
 	return (
@@ -16,10 +17,7 @@ function App() {
 
 				<AboutMe />
 
-				<section id="skills" className="mt-16">
-					<h3 className="mb-3 text-xl font-semibold">Skills</h3>
-					<p className="text-slate-600">List your core frontend skills.</p>
-				</section>
+				<Skills />
 
 				<section id="projects" className="mt-16">
 					<h3 className="mb-3 text-xl font-semibold">Projects</h3>
