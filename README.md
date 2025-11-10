@@ -4,11 +4,11 @@
 
 ### A modern, responsive portfolio showcasing my projects, skills, and contact info
 
-[![Live Demo](https://img.shields.io/badge/demo-live-brightgreen.svg)](#)
-[![GitHub](https://img.shields.io/badge/github-repo-blue.svg)](#)
+[![Live Demo](https://img.shields.io/badge/demo-live-brightgreen.svg)](https://github.com/Artemida1609/developer-portfolio)
+[![GitHub](https://img.shields.io/badge/github-repo-blue.svg)](https://github.com/Artemida1609/developer-portfolio)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-[Live Demo](#) · [Report Bug](#) · [Request Feature](#)
+[Live Demo](https://github.com/Artemida1609/developer-portfolio) · [Report Bug](https://github.com/Artemida1609/developer-portfolio/issues/new) · [Request Feature](https://github.com/Artemida1609/developer-portfolio/issues/new?labels=enhancement)
 
 </div>
 
@@ -16,29 +16,31 @@
 
 ## 📋 Table of Contents
 
-- [About The Project](#about-the-project)
-- [Built With](#built-with)
-- [Features](#features)
-- [Getting Started](#getting-started)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
+- [About The Project](#-about-the-project)
+- [Built With](#-built-with)
+- [Features](#-features)
+- [Getting Started](#-getting-started)
+- [Usage](#-usage)
+- [Contributing](#-contributing)
+- [License](#-license)
+- [Contact](#-contact)
 
 ---
 
 ## 🎯 About The Project
+<a id="about-the-project"></a>
 
-I’m Artem Skichko, a Front-End Developer from Slovakia. This portfolio presents my background, skills, and selected projects, and makes it easy to contact me.
+This is a single-page portfolio built with React, TypeScript, and Tailwind CSS to showcase projects and skills with a clean, responsive UI. It includes an About section, interactive Skills cards with icons, a Projects grid driven by typed data, and a simple Contact block with direct links.
 
-- 🎓 Studying Informatics at the Technical University of Košice; completed Front-End course at MATE Academy
-- 💼 Volunteer Front-End Developer at School of Heroes (client-leader tools and coordination systems)
-- 🧠 70+ challenges solved on LeetCode
-- 🧩 Tech focus: HTML, CSS (Sass/SCSS), JavaScript, TypeScript, React, Redux Toolkit; growing interest in REST APIs and PostgreSQL
+- Component-based structure with TypeScript types for `Project`
+- Responsive layout with accessible semantics and keyboard-friendly navigation
+- Fast local development and optimized build via Vite
+- Easy content updates through `src/data/projects.ts` and focused components
 
 ---
 
 ## 🛠️ Built With
+<a id="built-with"></a>
 
 ### Core
 - React 18
@@ -54,6 +56,7 @@ I’m Artem Skichko, a Front-End Developer from Slovakia. This portfolio present
 ---
 
 ## ✨ Features
+<a id="features"></a>
 
 - ✅ Responsive, accessible UI with clean typography
 - ✅ About Me with structured bio and highlights
@@ -70,6 +73,7 @@ Section components:
 ---
 
 ## 🚀 Getting Started
+<a id="getting-started"></a>
 
 ### Prerequisites
 - Node.js ≥ 18
@@ -79,8 +83,7 @@ Section components:
 ### Installation
 
 ```bash
-git clone <your-repo-url>
-cd <repo>
+git clone https://github.com/Artemida1609/developer-portfolio.git
 cd developer-portfolio
 npm ci
 npm run dev
@@ -98,6 +101,7 @@ npm run preview
 ---
 
 ## 💻 Usage
+<a id="usage"></a>
 
 ### Customize content
 
@@ -150,6 +154,7 @@ developer-portfolio/
 ---
 
 ## 🤝 Contributing
+<a id="contributing"></a>
 
 Contributions are welcome. Please:
 - Follow existing code style
@@ -160,18 +165,20 @@ Contributions are welcome. Please:
 ---
 
 ## 📄 License
+<a id="license"></a>
 
 Distributed under the MIT License. See `LICENSE`.
 
 ---
 
 ## 📬 Contact
+<a id="contact"></a>
 
 **Artem Skichko** — Front-End Developer (Slovakia)
 
 - Email: [artem.skichko0@gmail.com](mailto:artem.skichko0@gmail.com)
 - Telegram: [@artem_skichko](https://t.me/artem_skichko)
-- GitHub: https://github.com/yourusername  ← replace with your profile
+- Profile: https://github.com/Artemida1609
 
 Project directory: `developer-portfolio/`
 
