@@ -4,11 +4,11 @@
 
 ### A modern, responsive portfolio showcasing my projects, skills, and contact info
 
-[![Live Demo](https://img.shields.io/badge/demo-live-brightgreen.svg)](https://github.com/Artemida1609/developer-portfolio)
+[![Live Demo](https://img.shields.io/badge/demo-live-brightgreen.svg)](https://artemida1609.github.io/developer-portfolio/)
 [![GitHub](https://img.shields.io/badge/github-repo-blue.svg)](https://github.com/Artemida1609/developer-portfolio)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-[Live Demo](https://github.com/Artemida1609/developer-portfolio) · [Report Bug](https://github.com/Artemida1609/developer-portfolio/issues/new) · [Request Feature](https://github.com/Artemida1609/developer-portfolio/issues/new?labels=enhancement)
+[Live Demo](https://artemida1609.github.io/developer-portfolio/) · [Report Bug](https://github.com/Artemida1609/developer-portfolio/issues/new) · [Request Feature](https://github.com/Artemida1609/developer-portfolio/issues/new?labels=enhancement)
 
 </div>
 
