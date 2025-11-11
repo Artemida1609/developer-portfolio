@@ -3,7 +3,46 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Developer Portfolio</title>
+    
+    <!-- Primary Meta Tags -->
+    <title>Artem Skichko - Frontend Developer Portfolio</title>
+    <meta name="title" content="Artem Skichko - Frontend Developer Portfolio" />
+    <meta name="description" content="Frontend Developer specializing in React, TypeScript, and modern web technologies. Building responsive and user-friendly web applications." />
+    <meta name="keywords" content="frontend developer, react developer, typescript, web developer, portfolio" />
+    <meta name="author" content="Artem Skichko" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://artemida1609.github.io/developer-portfolio/" />
+    <meta property="og:title" content="Artem Skichko - Frontend Developer Portfolio" />
+    <meta property="og:description" content="Frontend Developer specializing in React, TypeScript, and modern web technologies." />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://artemida1609.github.io/developer-portfolio/" />
+    <meta property="twitter:title" content="Artem Skichko - Frontend Developer Portfolio" />
+    <meta property="twitter:description" content="Frontend Developer specializing in React, TypeScript, and modern web technologies." />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script>
+      // Prevent flash of dark theme by setting theme before React loads
+      (function() {
+        const savedTheme = localStorage.getItem('theme');
+        const root = document.documentElement;
+        
+        // Check localStorage first, then system preference
+        if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          root.classList.add('dark');
+        } else {
+          root.classList.remove('dark');
+          // Ensure localStorage is set if not already set
+          if (!savedTheme) {
+            localStorage.setItem('theme', 'light');
+          }
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

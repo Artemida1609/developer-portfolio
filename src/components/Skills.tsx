@@ -1,4 +1,6 @@
 import React from 'react'
+import { motion } from 'framer-motion'
+import ScrollAnimation from './ScrollAnimation'
 
 type Skill = {
 	key: string
@@ -7,9 +9,16 @@ type Skill = {
 }
 
 const IconBase = ({ children }: { children: React.ReactNode }) => (
-	<div className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br from-slate-800 to-slate-600 text-white shadow-inner">
+	<motion.div 
+		className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br from-slate-800 to-slate-600 dark:from-slate-100 dark:to-slate-300 text-white dark:text-slate-900 shadow-inner transition-transform duration-300 group-hover:scale-110"
+		whileHover={{ 
+			scale: 1.15,
+			rotate: [0, -10, 10, -10, 0],
+			transition: { duration: 0.5 }
+		}}
+	>
 		{children}
-	</div>
+	</motion.div>
 )
 
 const icons = {
@@ -77,33 +86,38 @@ const skills: Skill[] = [
 
 export default function Skills() {
 	return (
-		<section id="skills" className="mt-16 scroll-mt-24">
-			<div className="mb-6 flex items-end justify-between gap-4">
+		<section id="skills" className="mt-16 scroll-mt-24" aria-labelledby="skills-heading">
+			<ScrollAnimation>
+				<div className="mb-6 flex items-end justify-between gap-4">
 				<div>
-					<h3 className="text-2xl font-bold tracking-tight text-slate-900">Skills</h3>
-					<p className="mt-1 text-slate-600">Tools and technologies I work with</p>
+					<h2 id="skills-heading" className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">Skills</h2>
+					<p className="mt-1 text-slate-600 dark:text-gray-400">Tools and technologies I work with</p>
 				</div>
-				<div className="hidden h-1 w-20 rounded-full bg-slate-900 md:block" />
+				<div className="hidden h-1 w-20 rounded-full bg-slate-900 dark:bg-white transition-colors duration-200 ease-in-out md:block" aria-hidden="true" />
 			</div>
 
-			<ul className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+			<ul className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4" role="list">
 				{skills.map((skill) => (
-					<li
+					<motion.li
 						key={skill.key}
-						className="group relative overflow-hidden rounded-2xl border bg-white p-4 shadow-sm transition hover:shadow-lg"
+						className="group relative overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-4 shadow-sm dark:shadow-md transition-all duration-200 ease-in-out hover:shadow-lg dark:hover:shadow-xl"
+						role="listitem"
+						whileHover={{ y: -4, scale: 1.02 }}
+						transition={{ duration: 0.2 }}
 					>
-						<div className="absolute inset-0 bg-gradient-to-br from-slate-900/0 via-slate-900/0 to-slate-900/0 transition group-hover:via-slate-900/[0.02] group-hover:to-slate-900/[0.04]" />
+						<div className="absolute inset-0 bg-gradient-to-br from-slate-900/0 via-slate-900/0 to-slate-900/0 dark:from-white/0 dark:via-white/0 dark:to-white/0 transition group-hover:via-slate-900/[0.02] group-hover:to-slate-900/[0.04] dark:group-hover:via-white/[0.05] dark:group-hover:to-white/[0.1]" />
 						<div className="relative flex items-center gap-4">
 							<IconBase>{skill.icon}</IconBase>
 							<div>
-								<p className="text-base font-semibold text-slate-900">{skill.name}</p>
-								<p className="text-sm text-slate-500">Interactive card</p>
+								<p className="text-base font-semibold text-slate-900 dark:text-white">{skill.name}</p>
+								<p className="text-sm text-slate-500 dark:text-gray-400">Interactive card</p>
 							</div>
 						</div>
-						<div className="relative mt-4 h-1 w-0 bg-slate-900 transition-all duration-300 group-hover:w-20" />
-					</li>
+						<div className="relative mt-4 h-1 w-0 bg-slate-900 dark:bg-white transition-all duration-200 ease-in-out group-hover:w-20" aria-hidden="true" />
+					</motion.li>
 				))}
 			</ul>
+			</ScrollAnimation>
 		</section>
 	)
 }
