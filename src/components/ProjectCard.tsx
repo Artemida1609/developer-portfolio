@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Project } from '../types'
 import { motion } from 'framer-motion'
+import AnimatedLink from './AnimatedLink'
 
 interface ProjectCardProps {
 	project: Project
@@ -87,14 +88,11 @@ export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
 					)}
 
 					{project.liveUrl && (
-						<motion.a
+						<AnimatedLink
 							href={project.liveUrl}
-							target="_blank"
-							rel="noopener noreferrer"
+							external={false}
 							className="flex items-center gap-2 text-blue-600 dark:text-sky-400 hover:text-blue-800 dark:hover:text-sky-300 font-medium"
-							aria-label={`View ${project.title} live demo`}
-							whileHover={{ x: 4 }}
-							transition={{ duration: 0.2 }}
+							ariaLabel={`View ${project.title} live demo`}
 						>
 							<motion.svg 
 								className="w-5 h-5" 
@@ -108,7 +106,7 @@ export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
 								<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
 							</motion.svg>
 							Live Demo
-						</motion.a>
+						</AnimatedLink>
 					)}
 				</div>
 			</div>
