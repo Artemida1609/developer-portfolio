@@ -11,7 +11,7 @@ export const projects: Project[] = [
 		technologies: ['HTML', 'CSS', 'JavaScript', 'Responsive Design'],
 		githubUrl: 'https://github.com/Artemida1609/Gadget_Store',
 		liveUrl: 'https://artemida1609.github.io/Gadget_Store/',
-		imageUrl: `${baseUrl}images/projects/gadget-store.png`,
+		imageUrl: `${baseUrl}images/projects/gadget-store.jpg`,
 	},
 	{
 		id: 2,
@@ -33,6 +33,16 @@ export const projects: Project[] = [
 		liveUrl: 'https://Artemida1609.github.io/Todo_App/',
 		imageUrl: `${baseUrl}images/projects/todo-app.png`,
 	},
+	{
+    id: 4,
+    title: 'HairCare',
+    description:
+      'A premium barber shop and beauty salon website featuring a sophisticated dark theme, smooth scroll animations, and a fully responsive gallery. Includes interactive appointment forms, artist profiles with stagger animations, and a customized mobile navigation experience.',
+    technologies: ['React', 'TypeScript', 'Tailwind CSS v4', 'Framer Motion', 'Vite'],
+    githubUrl: 'https://github.com/Artemida1609/HairCare',
+    liveUrl: 'https://artemida1609.github.io/HairCare/',
+    imageUrl: `${baseUrl}images/projects/haircare.jpg`,
+  },
 ]
 
 

@@ -65,10 +65,9 @@ const icons = {
 			<path fill="currentColor" d="M21.6 11.2L12.8 2.4a1.7 1.7 0 0 0-2.4 0L8.2 4.6l2.3 2.3c.5-.2 1-.1 1.4.3c.4.4.5.9.3 1.4l2.2 2.2c.5-.2 1-.1 1.4.3c.6.6.6 1.6 0 2.2s-1.6.6-2.2 0c-.4-.4-.5-.9-.3-1.4l-2-2l-.1 5.2c.5.2.9.6 1 1.2c.2.9-.3 1.7-1.2 1.9a1.7 1.7 0 0 1-2-1.2c-.2-.9.3-1.7 1.2-1.9l.1-5.2c-.2-.1-.3-.2-.5-.4c-.6-.6-.6-1.6 0-2.2c.1-.1.3-.2.4-.3L7 5l-4.6 4.6a1.7 1.7 0 0 0 0 2.4l8.8 8.8c.7.7 1.7.7 2.4 0l7.9-7.9c.7-.7.7-1.7.1-2.4z" />
 		</svg>
 	),
-	pg: (
-		<svg viewBox="0 0 24 24" className="h-6 w-6" aria-hidden="true">
-			<path fill="currentColor" d="M12 3c-4.4 0-8 2.7-8 6s3.6 6 8 6s8-2.7 8-6s-3.6-6-8-6zm-1.5 9l-2.2-2.2l1.1-1.1l1.1 1.1l3.3-3.3l1.1 1.1L10.5 12z" />
-			<path fill="currentColor" d="M4 15.5C4 17.4 7.6 19 12 19s8-1.6 8-3.5V14c-1.6 1.4-4.6 2.3-8 2.3S5.6 15.4 4 14v1.5z" />
+	tailwind: (
+		<svg viewBox="0 0 32 32" className="h-6 w-6" aria-hidden="true">
+			<path fill="currentColor" d="M9,13.7q1.4-5.6,7-5.6c5.6,0,6.3,4.2,9.1,4.9q2.8.7,4.9-2.1-1.4,5.6-7,5.6c-5.6,0-6.3-4.2-9.1-4.9Q11.1,10.9,9,13.7ZM2,22.1q1.4-5.6,7-5.6c5.6,0,6.3,4.2,9.1,4.9q2.8.7,4.9-2.1-1.4,5.6-7,5.6c-5.6,0-6.3-4.2-9.1-4.9Q4.1,19.3,2,22.1Z"/>
 		</svg>
 	),
 }
@@ -81,7 +80,7 @@ const skills: Skill[] = [
 	{ key: 'react', name: 'React', icon: icons.react },
 	{ key: 'redux', name: 'Redux Toolkit', icon: icons.redux },
 	{ key: 'git', name: 'Git', icon: icons.git },
-	{ key: 'pg', name: 'PostgreSQL', icon: icons.pg },
+	{ key: 'tw', name: 'TailwindCSS', icon: icons.tailwind },
 ]
 
 export default function Skills() {

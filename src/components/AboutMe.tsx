@@ -38,7 +38,7 @@ export default function AboutMe() {
 						</p>
 					</motion.div>
 					<div className="mt-4 flex flex-wrap gap-3" role="list" aria-label="Technologies">
-						{['HTML / CSS (Sass/SCSS)', 'JavaScript / TypeScript', 'React / Redux Toolkit', 'REST APIs / PostgreSQL'].map((tech) => (
+						{['HTML / CSS (Sass/SCSS)', 'JavaScript / TypeScript', 'React / Redux Toolkit', 'REST APIs / TailwindCSS'].map((tech) => (
 							<span
 								key={tech}
 								className="inline-flex items-center rounded-full bg-slate-100 dark:bg-slate-700 px-3 py-1 text-xs font-medium text-slate-700 dark:text-gray-300 transition-colors duration-200 ease-in-out hover:bg-slate-200 dark:hover:bg-slate-600"
