@@ -1,12 +1,11 @@
-import React from "react";
-import ScrollAnimation from "./ScrollAnimation";
-import { motion } from "framer-motion";
 import {
   FaLinkedinIn,
   FaGithub,
   FaTelegram,
   FaInstagram,
 } from "react-icons/fa";
+
+const baseUrl = import.meta.env.BASE_URL
 
 const socials = [
   { icon: <FaLinkedinIn />, href: "#" },
@@ -32,7 +31,7 @@ export default function AboutMe() {
           }}
         >
           <img
-            src="/images/projects/about-img.png"
+            src={`${baseUrl}images/projects/about-img.png`}
             alt="About Me"
             className="rounded-full w-full h-full object-cover"
           />
