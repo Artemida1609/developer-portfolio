@@ -1,6 +1,11 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --main-bg: #000000;
+  --main-text: #ffffff;
+  --red-color: #b24b4e;
+  --light-red-color: #ab4d52;
+}
 
 /* App base styles */
 :root {
@@ -17,13 +22,6 @@ html {
 
 html, body, #root {
 	height: 100%;
-}
-
-/* Smooth theme transitions - додаємо transition до всього */
-* {
-	transition-property: background-color, border-color, color, fill, stroke, box-shadow;
-	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-	transition-duration: 200ms;
 }
 
 /* Текст без transition для запобігання блимання */

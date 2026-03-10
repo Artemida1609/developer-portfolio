@@ -7,9 +7,9 @@ import ScrollToTop from './components/ScrollToTop'
 
 function App() {
 	return (
-		<div className="min-h-screen bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-gray-100 transition-colors duration-200 ease-in-out">
+		<div className="min-h-screen bg-[#000000] text-slate-900 dark:text-gray-100 transition-colors duration-200 ease-in-out">
 			<Header />
-			<main className="mx-auto max-w-6xl px-6 py-12 md:py-16">
+			<main className="mx-auto max-w-6xl">
 				<AboutMe />
 
 				<Skills />
