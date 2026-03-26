@@ -7,6 +7,31 @@
   --light-red-color: #ab4d52;
 }
 
+/* globals.css */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0202;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c0392b;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e74c3c;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #c0392b #0a0202;
+}
+
 /* App base styles */
 :root {
 	color-scheme: light;

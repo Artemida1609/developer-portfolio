@@ -1,4 +1,5 @@
 import { motion, type Variants } from 'framer-motion'
+import { useState } from 'react'
 
 const contacts = [
 	{
@@ -53,6 +54,7 @@ const contacts = [
 	},
 ]
 
+
 const sectionVariants: Variants = {
 	hidden: {},
 	visible: { transition: { staggerChildren: 0.1 } },
@@ -69,6 +71,14 @@ const cardVariants: Variants = {
 }
 
 export default function Contact() {
+  const [copied, setCopied] = useState(false)
+
+  const handleCopyEmail = () => {
+  navigator.clipboard.writeText('artem.skichko0@gmail.com')
+  setCopied(true)
+  setTimeout(() => setCopied(false), 2000)
+}
+
 	return (
 		<>
 			<style>{`
@@ -149,102 +159,149 @@ export default function Contact() {
 						role="list"
 					>
 						{contacts.map((contact) => (
-							<motion.li
-								key={contact.id}
-								variants={cardVariants}
-								role="listitem"
-								className="contact-card-hover group relative rounded-2xl border transition-all duration-300 overflow-hidden"
-								style={{
-									background: 'rgba(10,2,2,0.7)',
-									borderColor: 'rgba(255,255,255,0.06)',
-								}}
-							>
-								{/* Top shimmer line */}
-								<div
-									className="absolute top-0 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-									style={{ background: 'linear-gradient(90deg, transparent, rgba(192,57,43,0.7), transparent)' }}
-									aria-hidden="true"
-								/>
+  <motion.li
+    key={contact.id}
+    variants={cardVariants}
+    role="listitem"
+    className="contact-card-hover group relative rounded-2xl border transition-all duration-300 overflow-hidden"
+    style={{
+      background: 'rgba(10,2,2,0.7)',
+      borderColor: 'rgba(255,255,255,0.06)',
+    }}
+  >
+    <div
+      className="absolute top-0 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+      style={{ background: 'linear-gradient(90deg, transparent, rgba(192,57,43,0.7), transparent)' }}
+      aria-hidden="true"
+    />
 
-								<a
-									href={contact.href}
-									target={contact.external ? '_blank' : undefined}
-									rel={contact.external ? 'noopener noreferrer' : undefined}
-									className="flex items-center gap-4 p-5 no-underline"
-									aria-label={`${contact.label}: ${contact.value}`}
-								>
-									{/* Icon */}
-									<div
-										className="contact-icon-ring relative flex-shrink-0 w-12 h-12 rounded-xl grid place-items-center text-white/60 group-hover:text-red-400 transition-colors duration-300"
-										style={{ background: 'rgba(255,255,255,0.05)' }}
-									>
-										{contact.icon}
-									</div>
+    {contact.id === 'email' ? (
+      // Email — копіювання замість mailto
+      <button
+        onClick={handleCopyEmail}
+        className="flex items-center gap-4 p-5 w-full text-left"
+        aria-label={`Copy email: ${contact.value}`}
+      >
+        <div
+          className="contact-icon-ring relative flex-shrink-0 w-12 h-12 rounded-xl grid place-items-center text-white/60 group-hover:text-red-400 transition-colors duration-300"
+          style={{ background: 'rgba(255,255,255,0.05)' }}
+        >
+          {contact.icon}
+        </div>
 
-									{/* Text */}
-									<div className="flex-1 min-w-0">
-										<p
-											className="text-[11px] uppercase tracking-[2px] text-white/30 group-hover:text-red-600 transition-colors duration-300 mb-0.5"
-											style={{ fontFamily: "'Rajdhani', sans-serif" }}
-										>
-											{contact.label}
-										</p>
-										<p
-											className="font-semibold text-white/70 group-hover:text-white transition-colors duration-300 truncate"
-											style={{ fontFamily: "'Rajdhani', sans-serif", fontSize: '15px', letterSpacing: '0.3px' }}
-										>
-											{contact.value}
-										</p>
-									</div>
+        <div className="flex-1 min-w-0">
+          <p
+            className="text-[11px] uppercase tracking-[2px] text-white/30 group-hover:text-red-600 transition-colors duration-300 mb-0.5"
+            style={{ fontFamily: "'Rajdhani', sans-serif" }}
+          >
+            {contact.label}
+          </p>
+          <p
+            className="font-semibold text-white/70 group-hover:text-white transition-colors duration-300 truncate"
+            style={{ fontFamily: "'Rajdhani', sans-serif", fontSize: '15px', letterSpacing: '0.3px' }}
+          >
+            {copied ? '✓ Copied!' : contact.value}
+          </p>
+        </div>
 
-									{/* Arrow */}
-									<svg
-										className="contact-arrow flex-shrink-0 text-red-500"
-										width="16"
-										height="16"
-										viewBox="0 0 24 24"
-										fill="none"
-										stroke="currentColor"
-										strokeWidth="2"
-										strokeLinecap="round"
-										strokeLinejoin="round"
-										aria-hidden="true"
-									>
-										<path d="M7 17L17 7M17 7H7M17 7v10"/>
-									</svg>
-								</a>
-							</motion.li>
-						))}
+        {/* Copy icon замість arrow */}
+        <svg
+          className="contact-arrow flex-shrink-0 text-red-500"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden="true"
+        >
+          <rect x="9" y="9" width="13" height="13" rx="2"/>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+        </svg>
+      </button>
+    ) : (
+      // Інші контакти — звичайне посилання
+      <a
+        href={contact.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center gap-4 p-5 no-underline"
+        aria-label={`${contact.label}: ${contact.value}`}
+      >
+        <div
+          className="contact-icon-ring relative flex-shrink-0 w-12 h-12 rounded-xl grid place-items-center text-white/60 group-hover:text-red-400 transition-colors duration-300"
+          style={{ background: 'rgba(255,255,255,0.05)' }}
+        >
+          {contact.icon}
+        </div>
+
+        <div className="flex-1 min-w-0">
+          <p
+            className="text-[11px] uppercase tracking-[2px] text-white/30 group-hover:text-red-600 transition-colors duration-300 mb-0.5"
+            style={{ fontFamily: "'Rajdhani', sans-serif" }}
+          >
+            {contact.label}
+          </p>
+          <p
+            className="font-semibold text-white/70 group-hover:text-white transition-colors duration-300 truncate"
+            style={{ fontFamily: "'Rajdhani', sans-serif", fontSize: '15px', letterSpacing: '0.3px' }}
+          >
+            {contact.value}
+          </p>
+        </div>
+
+        <svg
+          className="contact-arrow flex-shrink-0 text-red-500"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M7 17L17 7M17 7H7M17 7v10"/>
+        </svg>
+      </a>
+    )}
+  </motion.li>
+))}
 					</ul>
 
 					{/* ── Bottom CTA ── */}
 					<motion.div
-						variants={headingVariants}
-						className="mt-12 text-center"
-					>
-						<p className="text-white/25 text-sm" style={{ fontFamily: "'Rajdhani', sans-serif", letterSpacing: '1px' }}>
-							— OR SEND AN EMAIL DIRECTLY —
-						</p>
-						<a
-							href="mailto:artem.skichko0@gmail.com"
-							className="inline-flex items-center gap-3 mt-5 px-8 py-3.5 rounded-xl font-bold uppercase text-white transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-red-700 focus:ring-offset-2 focus:ring-offset-black"
-							style={{
-								fontFamily: "'Rajdhani', sans-serif",
-								letterSpacing: '2px',
-								fontSize: '14px',
-								background: 'linear-gradient(135deg, #c0392b, #96281b)',
-								boxShadow: '0 0 20px rgba(192,57,43,0.4), 0 4px 12px rgba(0,0,0,0.4)',
-							}}
-							onMouseEnter={e => (e.currentTarget.style.boxShadow = '0 0 35px rgba(192,57,43,0.65), 0 8px 24px rgba(0,0,0,0.5)')}
-							onMouseLeave={e => (e.currentTarget.style.boxShadow = '0 0 20px rgba(192,57,43,0.4), 0 4px 12px rgba(0,0,0,0.4)')}
-						>
-							<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-								<rect x="2" y="4" width="20" height="16" rx="2"/>
-								<path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
-							</svg>
-							Say Hello
-						</a>
-					</motion.div>
+  variants={headingVariants}
+  className="mt-12 text-center"
+>
+  <p
+    className="text-white/25 text-sm"
+    style={{ fontFamily: "'Rajdhani', sans-serif", letterSpacing: '1px' }}
+  >
+    — OR COPY EMAIL DIRECTLY —
+  </p>
+
+  <button
+    onClick={handleCopyEmail}
+    className="inline-flex items-center gap-3 mt-5 px-8 py-3.5 rounded-xl font-bold uppercase text-white transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-red-700 focus:ring-offset-2 focus:ring-offset-black"
+    style={{
+      fontFamily: "'Rajdhani', sans-serif",
+      letterSpacing: '2px',
+      fontSize: '14px',
+      background: 'linear-gradient(135deg, #c0392b, #96281b)',
+      boxShadow: '0 0 20px rgba(192,57,43,0.4), 0 4px 12px rgba(0,0,0,0.4)',
+    }}
+  >
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="9" y="9" width="13" height="13" rx="2"/>
+      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+    </svg>
+    {copied ? 'Copied!' : 'Copy Email'}
+  </button>
+</motion.div>
 				</motion.div>
 			</section>
 		</>

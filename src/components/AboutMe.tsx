@@ -8,10 +8,10 @@ import {
 const baseUrl = import.meta.env.BASE_URL
 
 const socials = [
-  { icon: <FaLinkedinIn />, href: "#" },
-  { icon: <FaGithub />, href: "#" },
-  { icon: <FaTelegram />, href: "#" },
-  { icon: <FaInstagram />, href: "#" },
+  { icon: <FaLinkedinIn />, href: "https://www.linkedin.com/in/artem-skichko-1629b7312/" },
+  { icon: <FaGithub />, href: "https://github.com/Artemida1609" },
+  { icon: <FaTelegram />, href: "https://t.me/artem_skichko" },
+  { icon: <FaInstagram />, href: "https://www.instagram.com/_artem_skich_/" },
 ];
 
 export default function AboutMe() {
